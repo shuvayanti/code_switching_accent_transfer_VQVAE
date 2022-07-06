@@ -15,7 +15,7 @@ import re
 #import utils.logger as logger
 import time
 import subprocess
-import sys5_lang as M
+import modules.sys5_lang as M
 import librosa
 import operator
 from functools import reduce
@@ -24,7 +24,7 @@ from collections import defaultdict
 print(torch.__version__)
 import glob
 #import configs.config5_siwis as config
-import config
+import modules.config
 num_speakers = 31 # siwis model
 #num_speakers = 100 #VCTK model
 lang_dims = 4
