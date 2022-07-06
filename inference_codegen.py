@@ -6,16 +6,16 @@ from torch import optim
 import torch.nn as nn
 import torch.nn.functional as F
 from torch.utils.data import Dataset, DataLoader
-from utils import *
+#from utils import *
 import sys
-import utils.env as env
+#import utils.env as env
 import argparse
 import platform
 import re
-import utils.logger as logger
+#import utils.logger as logger
 import time
 import subprocess
-import sys5 as M
+import sys5_lang as M
 import librosa
 import operator
 from functools import reduce
@@ -29,8 +29,8 @@ num_speakers = 31 # siwis model
 #num_speakers = 100 #VCTK model
 lang_dims = 4
 dat = "siwis"
-#test_model = "/home/s1995633/s1995633/dissertation/codes/multilingual_VQVAE/pre-trained/sys5_siwis_lang.43.upconv_552024.pyt"
-test_model = "/home/s1995633/s1995633/dissertation/codes/multilingual_VQVAE/pre-trained/sys5_vctk.43.upconv_753011.pyt"
+test_model = "/home/s1995633/s1995633/dissertation/codes/multilingual_VQVAE/pre-trained/sys5_siwis_lang.43.upconv_552024.pyt"   #"/path/to/siwis/pretrained/model"
+#test_model = "/home/s1995633/s1995633/dissertation/codes/multilingual_VQVAE/pre-trained/sys5_vctk.43.upconv_753011.pyt"
 condition = "train"
 #langDict = {"EN":0, "FR":1, "IT":2, "DE":3}​
 langDict = {"EN":0, "FR":1, "IT":2, "DE":3}
@@ -83,8 +83,8 @@ if __name__ == "__main__":
             NAME = [item.split(",")[0] for item in data]
         COMPRESSION = []
     if dat == "siwis":
-        data_path = "/home/s1995633/s1995633/dissertation/siwis_database/normalised_output_updated/"
-        with open("/home/s1995633/s1995633/dissertation/siwis_database/speaker_index_updated/index.pkl", 'rb') as f:
+        data_path = "/home/s1995633/s1995633/dissertation/siwis_database/normalised_output_updated/"                    #"/path/to/siwis/normalised/wavs"
+        with open("/home/s1995633/s1995633/dissertation/siwis_database/speaker_index_updated/index.pkl", 'rb') as f:    #"/path/to/siwis/speaker_index"
             index = pickle.load(f)
         train_set = index[:]
         #print(train_set)
@@ -154,25 +154,25 @@ if __name__ == "__main__":
             
             n = NAME[i]
 #            unpadded = unpadded.data.cpu().numpy()
-#            unpadded_dir = "vq_unpadded_data/sys5/"+test_model+"/"+condition
+#            unpadded_dir = "vq_unpadded_data/sys5_lang/"+test_model+"/"+condition
 #            os.makedirs(unpadded_dir, exist_ok=True)
 #            np.save(unpadded_dir+"/"+n, unpadded)
 
             phn_codes = phn_codes.data.cpu().numpy()
-            phn_code_dir = "vq_phn_codes_updated/sys5/"+test_model+"/"+condition
+            phn_code_dir = "vq_phn_codes_updated/sys5_lang/"+test_model+"/"+condition
             os.makedirs(phn_code_dir, exist_ok=True)
             np.save(phn_code_dir+"/"+n, phn_codes)
             phn_vecs = phn_vecs.data.cpu().numpy()[0]
-            phn_vec_dir = "vq_phn_vecs_updated/sys5/"+test_model+"/"+condition
+            phn_vec_dir = "vq_phn_vecs_updated/sys5_lang/"+test_model+"/"+condition
             os.makedirs(phn_vec_dir, exist_ok=True)
             np.save(phn_vec_dir+"/"+n, phn_vecs)
             
             spk_codes = spk_codes.data.cpu().numpy()
-            spk_code_dir = "vq_spk_codes_updated/sys5/"+test_model+"/all_siwis"
+            spk_code_dir = "vq_spk_codes_updated/sys5_lang/"+test_model+"/all_siwis"
             os.makedirs(spk_code_dir, exist_ok=True)
             np.save(spk_code_dir+"/"+n, spk_codes)
             spk_vecs = spk_vecs.data.cpu().numpy()[0]
-            spk_vec_dir = "vq_spk_vecs_updated/sys5/"+test_model+"/all_siwis"
+            spk_vec_dir = "vq_spk_vecs_updated/sys5_lang/"+test_model+"/all_siwis"
             os.makedirs(spk_vec_dir, exist_ok=True)
             np.save(spk_vec_dir+"/"+n, spk_vecs)
             
