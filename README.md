@@ -12,4 +12,7 @@ Please follow the intstructions listed [here](https://github.com/rhoposit/multil
 3. Use the provided pre-processing script: `preprocess_vqvae.py`
 4. Run `make_siwis_conditions.py` to create a proper held-out set for SIWIS data.
 
+# Pretraiend models
+Please download the [pretrained models](https://github.com/rhoposit/multilingual_VQVAE/tree/main/pre-trained) before running the inference code. 
+
 
