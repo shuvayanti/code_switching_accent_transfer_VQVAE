@@ -10,18 +10,18 @@ import glob
 import pickle
 import os
 import multiprocessing as mp
-from utils.dsp import *
+#from utils.dsp import *
 
 import sys
 import glob
 import pickle
 import os
 import multiprocessing as mp
-from utils.dsp import *
+#from utils.dsp import *
 
-SEG_PATH = "/home/s1995633/s1995633/dissertation/siwis_database/normalised_output_updated/"
-DATA_PATH = "/home/s1995633/s1995633/dissertation/siwis_database/speaker_output_updated/"
-SPKIND_PATH = "/home/s1995633/s1995633/dissertation/siwis_database/speaker_index_updated/"
+SEG_PATH = "/home/s1995633/s1995633/dissertation/siwis_database/normalised_output_updated/"     #"/path/to/normalised_wavs"
+DATA_PATH = "/home/s1995633/s1995633/dissertation/siwis_database/speaker_output_updated/"       #"/path/to/speaker/output"
+SPKIND_PATH = "/home/s1995633/s1995633/dissertation/siwis_database/speaker_index_updated/"      #"/path/to/speaker/index"
 
 def get_files(path):
     next_speaker_id = 0
@@ -78,7 +78,7 @@ with open(f'{SPKIND_PATH}/index.pkl', 'wb') as f:
     pickle.dump(index, f)
 
 
-spk_map = "/home/s1995633/s1995633/dissertation/siwis_database/spkmap_siwis_updated.txt"
+spk_map = "/home/s1995633/s1995633/dissertation/siwis_database/spkmap_siwis_updated.txt"        #"/path/to/speaker/map"
 output = open(spk_map, "w")
 for k,v in spks.items():
     output.write(str(k)+","+str(v)+"\n")
