@@ -17,12 +17,12 @@ import re
 import time
 import subprocess
 import os.path
-import sys5_lang as M
+import modules.sys5_lang as M
 import librosa
 import soundfile as sf
 import operator
 from functools import reduce
-import config
+import modules.config
 from functools import reduce
 from collections import defaultdict
 from operator import itemgetter
