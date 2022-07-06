@@ -13,7 +13,7 @@ def process(f):
     os.system(sox1_command)
     
     sv56_fname = sv56_dir+"/"+fname+"_sv56.raw"
-    sv56_path = "/home/s1995633/s1995633/dissertation/codes/sv56demo"
+    sv56_path = "/home/s1995633/s1995633/dissertation/codes/sv56demo"       #"/path/to/binary/file"
     sv56_command = sv56_path+" -log loggy.log -q -lev -26 -sf 16000 "+sox1_fname+" "+sv56_fname+" 640"
     os.system(sv56_command)
     sox2_fname = outdir+"/"+fname+".wav"
@@ -25,10 +25,10 @@ def process(f):
    
 #for dirs in os.listdir("/home/s1995633/s1995633/dissertation/siwis_database/wav_silence_trimmed/"):
  #   print(dirs)
-outdir = "/home/s1995633/s1995633/dissertation/siwis_database/normalised_output_updated/"   #sys.argv[4]
-sv56_dir = "/home/s1995633/s1995633/dissertation/codes/sv56_updated/"   #sys.argv[3]
-sox1_dir ="/home/s1995633/s1995633/dissertation/siwis_database/sox_output_updated/"      #sys.argv[2]
-wav_dir = "/home/s1995633/s1995633/dissertation/siwis_database/wav_silence_trimmed"        #sys.argv[1]
+outdir = "/home/s1995633/s1995633/dissertation/siwis_database/normalised_output_updated/"   #sys.argv[4]  "/path/to/normalised/wavs"
+sv56_dir = "/home/s1995633/s1995633/dissertation/codes/sv56_updated/"   #sys.argv[3]                        "/path/to/sv56/"
+sox1_dir ="/home/s1995633/s1995633/dissertation/siwis_database/sox_output_updated/"      #sys.argv[2]       "/path/to/sox/output"
+wav_dir = "/home/s1995633/s1995633/dissertation/siwis_database/wav_silence_trimmed"        #sys.argv[1]     "/path/to/silence/trimmed/wav"
 
 os.makedirs(sv56_dir, exist_ok=True)
 os.makedirs(outdir, exist_ok=True)
