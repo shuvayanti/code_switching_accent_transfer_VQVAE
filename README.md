@@ -19,4 +19,4 @@ Run `inference_codegen.py` to obtain the speaker and language VQ-codes.
 Run `code_Switching-Voice_conversion.py` to generate samples by combining langauge codes and speaker codes.
 
 # Acknowledgements
-All the codes in modules,`make_siwis_conditions.py`,`preprocess_vqvae.py`,`run_sv56.py` are borrowed from https://github.com/rhoposit/multilingual_VQVAE
+All the codes in `modules`,`make_siwis_conditions.py`,`preprocess_vqvae.py`,`run_sv56.py` are borrowed from https://github.com/rhoposit/multilingual_VQVAE
