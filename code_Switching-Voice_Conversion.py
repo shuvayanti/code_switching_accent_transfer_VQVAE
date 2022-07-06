@@ -7,13 +7,13 @@ from torch import optim
 import torch.nn as nn
 import torch.nn.functional as F
 from torch.utils.data import Dataset, DataLoader
-from utils import *
+#from utils import *
 import sys
-import utils.env as env
+#import utils.env as env
 import argparse
 import platform
 import re
-import utils.logger as logger
+#import utils.logger as logger
 import time
 import subprocess
 import os.path
@@ -36,16 +36,16 @@ def load_wav(filename, encode=False):
         x = encode_16bits(x)
     return x
 
-PHN_CODE_PATH = "/home/s1995633/s1995633/dissertation/codes/vq_phn_codes_updated/sys5_lang/siwis_552024/train/"
-PHN_VEC_PATH = "/home/s1995633/s1995633/dissertation/codes/vq_phn_vecs_updated/sys5_lang/siwis_552024/train/"
-SPK_CODE_PATH = "/home/s1995633/s1995633/dissertation/codes/vq_spk_codes_updated/sys5_lang/siwis_552024/all_siwis/"
-SPK_VEC_PATH = "/home/s1995633/s1995633/dissertation/codes/vq_spk_vecs_updated/sys5_lang/siwis_552024/all_siwis/"
-SPK_MAP = "/home/s1995633/s1995633/dissertation/siwis_database/speaker_index_updated/index.pkl"
-ALIGN_PATH = "/home/s1995633/s1995633/dissertation/siwis_database/alignment_updated/"
-DATA_PATH = "/home/s1995633/s1995633/dissertation/siwis_database/normalised_output_updated/"
+PHN_CODE_PATH = "/home/s1995633/s1995633/dissertation/codes/vq_phn_codes_updated/sys5_lang/siwis_552024/train/"    	#"/path/to/train/phn_codes"
+PHN_VEC_PATH = "/home/s1995633/s1995633/dissertation/codes/vq_phn_vecs_updated/sys5_lang/siwis_552024/train/"		#"/path/to/train/phn_vectors"
+SPK_CODE_PATH = "/home/s1995633/s1995633/dissertation/codes/vq_spk_codes_updated/sys5_lang/siwis_552024/all_siwis/"	#"/path/to/siwis/speaker_codes"
+SPK_VEC_PATH = "/home/s1995633/s1995633/dissertation/codes/vq_spk_vecs_updated/sys5_lang/siwis_552024/all_siwis/"	#"/path/to/siwis/speaker_vectors"
+SPK_MAP = "/home/s1995633/s1995633/dissertation/siwis_database/speaker_index_updated/index.pkl"				#"/path/to/siwis/speaker_map"
+ALIGN_PATH = "/home/s1995633/s1995633/dissertation/siwis_database/alignment_updated/"					#"/path/to/siwis/time_alignment"
+DATA_PATH = "/home/s1995633/s1995633/dissertation/siwis_database/normalised_output_updated/"				#"/path/to/siwis/normalised_wavs"
 
 num_speakers = 31
-test_model = "/home/s1995633/s1995633/dissertation/codes/multilingual_VQVAE/pre-trained/sys5_siwis_lang.43.upconv_552024.pyt"
+test_model = "/home/s1995633/s1995633/dissertation/codes/multilingual_VQVAE/pre-trained/sys5_siwis_lang.43.upconv_552024.pyt"	#"/path/to/multilingual_VQVAE/pretrained/model"
 
 langDict = {"EN":0, "FR":1, "IT":2, "DE":3}
 
