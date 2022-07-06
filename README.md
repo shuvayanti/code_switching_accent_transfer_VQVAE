@@ -15,4 +15,4 @@ Please follow the intstructions listed [here](https://github.com/rhoposit/multil
 # Pretraiend models
 Please download the [pretrained models](https://github.com/rhoposit/multilingual_VQVAE/tree/main/pre-trained) before running the inference code. 
 
-
+Run `inference_codegen.py` to obtain the speaker and language VQ-codes.
