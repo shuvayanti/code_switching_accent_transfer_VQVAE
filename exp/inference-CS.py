@@ -6,17 +6,17 @@ from torch import optim
 import torch.nn as nn
 import torch.nn.functional as F
 from torch.utils.data import Dataset, DataLoader
-from utils import *
+#from utils import *
 import sys
-import utils.env as env
+#import utils.env as env
 import argparse
 import platform
 import re
-import utils.logger as logger
+#import utils.logger as logger
 import time
 import subprocess
 import os.path
-import sys5_lang as M
+import modules.sys5_lang as M
 import librosa
 import soundfile as sf
 import operator
