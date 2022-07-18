@@ -1,4 +1,4 @@
-# msc_slp_thesis_codes
+# Multi-Speaker Code-Switching and Accent Transfer: Revisiting VQ-VAE
 
 This project tests the limits of https://github.com/rhoposit/multilingual_VQVAE.
 
