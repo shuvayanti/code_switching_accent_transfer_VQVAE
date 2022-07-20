@@ -18,6 +18,9 @@ Run `inference_codegen.py` to obtain the speaker and language VQ-codes.
 
 Run `code_Switching-Voice_conversion.py` to generate samples by combining langauge codes and speaker codes.
 
+# Samples
+The samples for the paper can be found [here](https://rhoposit.github.io/SLT2023/)
+
 # Acknowledgements
 The follwing codes have been borrowed from https://github.com/rhoposit/multilingual_VQVAE
 1. All codes in `modules`.
